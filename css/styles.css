@@ -181,6 +181,23 @@ aside input[type=button] {
   transition: ease 0.3s;
 }
 
+aside button {
+  border: none;
+  border: solid 1px var(--primary-color);
+  padding: 1%;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-left: none;
+  cursor: pointer;
+  background-color: rgba(204,200,199,0.31);
+  padding: 0% 2% 0% 2%;
+  transition: ease 0.3s;
+  text-align: center;
+  font-family: var(--Third-font);
+  color: var(--primary-color);
+  font-size: var(--normal-fontSize);
+}
+
 aside input[type=button]:hover {
   background-color: rgba(204,200,199,0.8);
 }
@@ -212,4 +229,5 @@ footer {
   font-size: var(--normal-fontSize);
   color: var(--primary-color);
 }
+
 
