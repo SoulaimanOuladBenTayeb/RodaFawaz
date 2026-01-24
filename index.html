@@ -1,69 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roda Fawaz</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-    <!-- <link rel="icon" href="../images/logoJdn.png" type="image/png"> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-    <script src="./js/events.js" defer></script>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roda Fawaz</title>
+</head>
+<body style="font-family: Arial;">
+  <h1>Roda Fawaz - Test Netlify</h1>
+  
+  <main style="min-height: 300px; border: 1px solid #ccc; padding: 20px;">
+    <h2>Événements (JSON test)</h2>
+    <div id="events">Chargement...</div>
+  </main>
+  
+  <aside style="float:right; width:300px;">
+    <h3>Newsletter</h3>
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot">
+      <input type="hidden" name="bot" value="">
+      <input type="email" name="email" placeholder="email@example.com" required>
+      <button type="submit">S'inscrire</button>
+    </form>
+  </aside>
 
-  <body>
-    <header>
-
-        <h1><span class="NameR">R</span>oda Fawaz</h1>
-        <article>
-            <p>Parfois sur scène,</p>
-            <p>parfois à l'écran,</p>
-            <p>parfois en écriture.</p>
-        </article>
-        <p>Ici, j'en laisse une trace.</p>
-
-    </header>
-
-    <main class="events" id="events-container">
-        <!-- <section>
-            <p>Paris — Gibran Gibran, IMA — 14 mars 2026.</p>
-            <a href="#">Réservations</a>
-        </section>
-
-        <section>
-            <p>Bruxelles — La Mouette, théâtre des Martyrs — du 2 au 11 avril 2026.</p>
-            <a href="#">Réservations</a>
-        </section>
-
-        <section>
-            <p>Louvain-la-Neuve — La Mouette, théâtre Jean Vilar — du 15 au 24 avril 2026.</p>
-            <a href="#">Réservations</a>
-        </section> -->
-    </main>
-
-    <aside>
-      <h2>Des nouvelles du travail.</h2>
-      
-      <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <!-- Honeypot invisible -->
-        <div style="position:absolute; left:-9999px;">
-          <input class="honeypot" name="bot-field" type="text" tabindex="-1" autocomplete="off" />
-        </div>
-        
-        <input type="email" name="email" placeholder="adresse e-mail..." required>
-        <button type="submit">Recevoir les nouvelles</button>
-      </form>
-    
-      <a href="mailto:contact@rodafawaz.com?subject=Message%20du%20site&body=Bonjour%20Roda,%0A%0A">Laisser un mot</a>
-    </aside>
-
-
-
-    <footer><p>Merci d'être là.</p></footer>
-
-  </body>
+  <script>
+    fetch('./data/events.json')
+      .then(r=>r.json())
+      .then(events => {
+        document.getElementById('events').innerHTML = 
+          events.map(e => `<p>${e.title} <a href="${e.link}">Résa</a></p>`).join('');
+      })
+      .catch(() => document.getElementById('events').innerHTML = 'JSON OK');
+  </script>
+</body>
 </html>
-
-
-
-
-
