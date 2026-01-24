@@ -1,0 +1,215 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap'); */
+
+@font-face {
+  font-family: "HelveticaRegular";
+  src: url("../fonts/HelveticaNeueRoman.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "MinionProItalic";
+  src: url("../fonts/Minion\ Pro\ Italic\ Subhead.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "MinionProRegular";
+  src: url("../fonts/MinionPro-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "ARIAL";
+  src: url("../fonts/ARIAL.TTF") format("opentype");
+}
+
+:root {
+  --primary-color: #1b263b;
+  --primary-font: "HelveticaRegular";
+  --Second-font: "MinionProItalic";
+  --Third-font: "MinionProRegular";
+  --normal-fontSize: 1.5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.backendMessage {
+  font-family: var(--Second-font);
+  font-size: var(--normal-fontSize);
+}
+
+header {
+  /* background-color: red; */
+  padding: 6.5% 0% 2% 8%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-family: var(--primary-font);
+}
+
+header span.NameR {
+  font-family: "ARIAL";
+}
+
+header p {
+  font-size: var(--normal-fontSize);
+  font-family: var(--primary-font);
+}
+
+header article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+main {
+  /* background-color: blue; */
+  padding: 2% 0% 0% 8%;
+  display: flex;
+  flex-direction: column;
+}
+
+main section {
+  /* background-color: green; */
+  position: relative;
+  padding: 2% 0%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  font-family: var(--Second-font);
+  font-size: var(--normal-fontSize);
+}
+
+main section::before {
+  content: "";
+  background-color: var(--primary-color);
+  height: 1px;
+  width: 2.5%;
+  position: absolute;
+  top: 0;
+}
+
+main section:last-child::after {
+  content: "";
+  background-color: var(--primary-color);
+  height: 1px;
+  width: 2.5%;
+  position: absolute;
+  bottom: 0;
+}
+
+main section a {
+  position: relative;
+  width: fit-content;
+}
+
+main section a::after {
+  content: "";
+  height: 1px;
+  width: 0%;
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: ease 0.2s;
+}
+
+main section a:hover::after {
+  width: 100%;
+}
+
+aside {
+  padding: 5% 0% 5% 8%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-family: var(--primary-font);
+  font-weight: 400;
+  font-size: var(--normal-fontSize);
+}
+
+aside h2 {
+  font-weight: 400;
+  font-size: var(--normal-fontSize);
+}
+
+aside a {
+  margin-top: 5%;
+}
+
+aside form {
+  display: flex;
+  border-collapse: collapse;
+}
+
+aside form input {
+  text-align: center;
+  font-family: var(--Third-font);
+  color: var(--primary-color);
+  font-size: var(--normal-fontSize);
+}
+
+aside input[type=email] {
+  border: none;
+  border: solid 1px var(--primary-color);
+  padding: 1%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+aside input[type=email]::placeholder {
+  color: var(--primary-color);
+}
+
+aside input[type=button] {
+  border: none;
+  border: solid 1px var(--primary-color);
+  padding: 1%;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-left: none;
+  cursor: pointer;
+  background-color: rgba(204,200,199,0.31);
+  padding: 0% 2% 0% 2%;
+  transition: ease 0.3s;
+}
+
+aside input[type=button]:hover {
+  background-color: rgba(204,200,199,0.8);
+}
+
+aside > a {
+  position: relative;
+  width: fit-content;
+}
+
+aside > a::after {
+  content: "";
+  height: 1px;
+  width: 0%;
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: ease 0.2s;
+}
+
+aside > a:hover::after {
+  width: 100%;
+}
+
+footer {
+  text-align: center;
+  padding: 5% 0% 10% 0%;
+  font-family: var(--primary-font);
+  font-size: var(--normal-fontSize);
+  color: var(--primary-color);
+}
+
