@@ -41,20 +41,22 @@
     </main>
 
     <aside>
-        <h2>Des nouvelles du travail.</h2>
-
-        <form action="">
-            <input type="email" name="" id="" placeholder="adresse e-mail...">
-            <input type="button" value="Recevoir les nouvelles">
-        </form>
-
-        <a href="mailto:contact@rodafawaz.com?subject=Message%20du%20site&body=Bonjour%20Roda,">Laisser un mot</a>
-
+      <h2>Des nouvelles du travail.</h2>
+    
+      <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input class="honeypot" name="bot-field" type="text" />
+        <input type="email" name="email" placeholder="adresse e-mail..." required>
+        <button type="submit">Recevoir les nouvelles</button>
+      </form>
+    
+      <a href="mailto:contact@rodafawaz.com?subject=Message%20du%20site&body=Bonjour%20Roda,%0A%0A">Laisser un mot</a>
     </aside>
+
 
     <footer><p>Merci d'être là.</p></footer>
 
   </body>
 </html>
+
 
 
