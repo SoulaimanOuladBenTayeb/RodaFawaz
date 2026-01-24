@@ -198,7 +198,7 @@ aside button {
   font-size: var(--normal-fontSize);
 }
 
-aside input[type=button]:hover {
+aside button:hover {
   background-color: rgba(204,200,199,0.8);
 }
 
@@ -229,5 +229,6 @@ footer {
   font-size: var(--normal-fontSize);
   color: var(--primary-color);
 }
+
 
 
