@@ -20,34 +20,38 @@ async function loadEvents() {
   }
 }
 
+// 🔥 ÉTAPE 2 : INITIALISATION EMAILJS AVEC TES ID
+emailjs.init("5Sv5vF_AHr4EsBZS7");  // ← TON PUBLIC_KEY
+
 // Gestion du formulaire newsletter
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.querySelector('form[name="newsletter"]');
   
   form.addEventListener('submit', async function(e) {
-    e.preventDefault(); // Empêche l'envoi Netlify par défaut
+    e.preventDefault();
     
     const email = form.querySelector('input[name="email"]').value;
     const button = form.querySelector('button[type="submit"]');
     
-    // Désactive le bouton pendant le traitement
     const originalText = button.textContent;
     button.textContent = 'Envoi...';
     button.disabled = true;
     
     try {
-      // Étape 1 : Préparation pour l'envoi (on simulera d'abord)
-      console.log('Email capturé:', email);
+      const params = {
+        to_email: email,
+        user_email: email
+      };
       
-      // Pour l'instant, on affiche juste un message de succès
-      // (Étape 2 = vrai envoi email, Étape 3 = sauvegarde)
-      alert(`Merci ! Confirmation envoyée à ${email}`);
+      // 🔥 ENVOI REEL avec TES identifiants
+      await emailjs.send("service_mmjvu14", "template_fzmu3pv", params);
+      
+      alert(`✅ Parfait ! Confirmation envoyée à ${email}`);
       
     } catch (error) {
-      console.error('Erreur:', error);
-      alert('Erreur lors de l\'envoi. Réessayez.');
+      console.error('EmailJS error:', error);
+      alert('❌ Erreur envoi. Réessayez ou contacte-moi.');
     } finally {
-      // Remet le bouton en état
       button.textContent = originalText;
       button.disabled = false;
       form.reset();
@@ -58,6 +62,3 @@ document.addEventListener('DOMContentLoaded', function() {
 // Refresh 30s + au load
 setInterval(loadEvents, 30000);
 loadEvents();
-
-
-
