@@ -45,18 +45,27 @@
       <h2>Des nouvelles du travail.</h2>
     
       
-      <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <p class="honeypot" style="display:none;">
-          <input class="honeypot" name="bot-field" type="text" />
-        </p>
-        <!-- Honeypot invisible -->
-        <div style="position:absolute; left:-9999px;">
-          <input class="honeypot" name="bot-field" type="text" tabindex="-1" autocomplete="off" />
-        </div>
-        
-        <input type="email" name="email" placeholder="adresse e-mail..." required>
+      <form 
+        action="https://docs.google.com/forms/d/e/TON_FORM_ID/formResponse"
+        method="POST"
+        target="hidden_iframe"
+        onsubmit="submitted=true;"
+      >
+        <input
+          type="email"
+          name="entry.1234567890"
+          placeholder="adresse e-mail..."
+          required
+        >
         <button type="submit">Recevoir les nouvelles</button>
       </form>
+      
+      <iframe
+        name="hidden_iframe"
+        style="display:none;"
+        onload="if(submitted) showThanks();"
+      ></iframe>
+
 
 
       <a href="mailto:contact@rodafawaz.com?subject=Message%20du%20site&body=Bonjour%20Roda,%0A%0A">Laisser un mot</a>
@@ -67,4 +76,5 @@
     <footer><p>Merci d'être là.</p></footer>
 
   </body>
+
 
