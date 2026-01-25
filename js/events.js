@@ -20,7 +20,7 @@ async function loadEvents() {
   }
 }
 
-let submitted = false;
+window.submitted = false;
 
 function showThanks() {
   alert("Merci ! Roda vous tiendra au courant des prochains événements.");
@@ -29,4 +29,5 @@ function showThanks() {
 // Refresh 30s + au load
 setInterval(loadEvents, 30000);
 loadEvents();
+
 
