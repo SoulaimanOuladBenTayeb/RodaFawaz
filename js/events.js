@@ -20,14 +20,35 @@ async function loadEvents() {
   }
 }
 
-window.submitted = false;
+const form = document.getElementById('newsletter-form');
+const thanks = document.getElementById('thanks');
 
-function showThanks() {
-  alert("Merci ! Roda vous tiendra au courant des prochains événements.");
-}
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  try {
+    await fetch(
+      "https://docs.google.com/forms/d/e/1FAIpQLSf57GcJQX4fe4zMy6xpsNNr0Vy3jGSGgBP0XwT0Cq9pnJcXzg/formResponse",
+      {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+      }
+    );
+
+    form.style.display = "none";
+    thanks.style.display = "block";
+
+  } catch (err) {
+    alert("Erreur, réessaie plus tard.");
+  }
+});
 
 // Refresh 30s + au load
 setInterval(loadEvents, 30000);
 loadEvents();
+
 
 
