@@ -28,6 +28,10 @@
   --normal-fontSize: 1.5rem;
 }
 
+/* body {
+  width: 100%;
+} */
+
 * {
   margin: 0;
   padding: 0;
@@ -46,7 +50,7 @@ header {
   padding: 6.5% 0% 2% 8%;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 6rem;
 }
 
 header h1 {
@@ -71,7 +75,7 @@ header article {
 
 main {
   /* background-color: blue; */
-  padding: 2% 0% 0% 8%;
+  padding: 7% 0% 0% 8%;
   display: flex;
   flex-direction: column;
 }
@@ -79,7 +83,7 @@ main {
 main section {
   /* background-color: green; */
   position: relative;
-  padding: 2% 0%;
+  padding: 3% 0%;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -91,7 +95,7 @@ main section::before {
   content: "";
   background-color: var(--primary-color);
   height: 1px;
-  width: 2.5%;
+  width: 150px;
   position: absolute;
   top: 0;
 }
@@ -100,7 +104,7 @@ main section:last-child::after {
   content: "";
   background-color: var(--primary-color);
   height: 1px;
-  width: 2.5%;
+  width: 150px;
   position: absolute;
   bottom: 0;
 }
@@ -126,7 +130,7 @@ main section a:hover::after {
 }
 
 aside {
-  padding: 5% 0% 5% 8%;
+  padding: 9% 0% 5% 8%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -141,7 +145,7 @@ aside h2 {
 }
 
 aside a {
-  margin-top: 5%;
+  margin-top: 7%;
 }
 
 aside form {
@@ -237,9 +241,66 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+
   .event-title {
     flex-direction: column;
     gap: 1rem;
+  }
+
+  header {
+    /* background-color: red; */
+    padding: 23% 0% 2% 8%;
+    gap: 4rem;
+  }
+
+  main {
+    padding: 7% 8% 0% 8%;
+    margin-top: 10%;
+  }
+
+  main section {
+    font-size: 1.3rem;
+    padding: 10% 0%;
+  }
+
+  aside {
+    position: relative;
+    flex-direction: column;
+    padding: 9% 8% 5% 8%;
+    margin-top: 3rem;
+    gap: 3rem;
+  }
+
+  aside form {
+    width: 100%;
+    flex-direction: column;
+    border-collapse: inherit;
+    gap: 1.2rem;
+  }
+
+  aside form input {
+    display: block;
+    text-align: left;
+  }
+
+  aside input[type=email] {
+    border: none;
+    border: solid 1px var(--primary-color);
+    padding: 2%;
+    padding-left: 6%;
+    border-radius: 10px;
+  }
+
+  aside button {
+    border: none;
+    border: solid 1px var(--primary-color);
+    border-radius: 100px;
+    background-color: rgba(204, 200, 199, 0.473);
+    padding: 2% 2% 2% 2%;
+  }
+
+  footer {
+    margin-top: 15%;
   }
 }
 
