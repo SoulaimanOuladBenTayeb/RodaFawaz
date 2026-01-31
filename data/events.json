@@ -4,7 +4,7 @@
     "description": "Gibran Gibran, Institut du monde arabe",
     "date": "— 14 mars 2026",
     "link": "",
-    "linkType": "none"
+    "linkType": "info"
   },
   {
     "city": "Bruxelles",
@@ -21,5 +21,6 @@
     "linkType": "reservation"
   }
 ]
+
 
 
