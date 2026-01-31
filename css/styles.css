@@ -233,14 +233,16 @@ footer {
 .event-title {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 3rem;
 }
 
 @media only screen and (max-width: 600px) {
   .event-title {
     flex-direction: column;
+    gap: 1rem;
   }
 }
+
 
 
 
