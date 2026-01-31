@@ -230,13 +230,17 @@ footer {
   color: var(--primary-color);
 }
 
+.event-title {
+    display: flex;
+    flex-direction: column;
+}
+
 @media (min-width: 768px) {
   .event-title {
-    display: flex;
     flex-direction: row;
-    gap: 1rem;
   }
 }
+
 
 
 
