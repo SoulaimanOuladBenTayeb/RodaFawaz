@@ -26,11 +26,11 @@ async function loadEvents() {
         <section class="event">
           <p class="event-title">
             <span class="event-main">
-              ${event.city || event.title ? (event.city || event.title.split('—')[0]) : 'Événement'}
-              ${event.description ? `— ${event.description}` : ''}
+              ${event.city || (event.title ? event.title.split('—')[0].trim() : 'Événement')}
+              ${event.description ? ` — ${event.description}` : ''}
             </span>
             <span class="event-date">
-              ${event.date || ''}
+              ${event.date || (event.title ? event.title.split('—').pop().trim() : '')}
             </span>
           </p>
           ${buttonHtml}
@@ -44,18 +44,33 @@ async function loadEvents() {
   }
 }
 
-// Formulaire newsletter avec validation
+// Newsletter avec erreur en paragraphe rouge
 const form = document.getElementById('newsletter-form');
 const thanks = document.getElementById('thanks');
 const emailInput = form.querySelector('input[type="email"]');
+
+// Créer élément erreur
+const errorMessage = document.createElement('p');
+errorMessage.id = 'email-error';
+errorMessage.style.cssText = `
+  display: none;
+  color: #d00;
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+`;
+form.appendChild(errorMessage);
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const emailValue = emailInput.value.trim();
 
+  // Cache erreur précédente
+  errorMessage.style.display = 'none';
+
   if (!isValidEmail(emailValue)) {
-    alert("Adresse e-mail invalide (exemple : nom@domaine.com)");
+    errorMessage.textContent = "Adresse invalide. Format : nom@domaine.com ou nom@domaine.be";
+    errorMessage.style.display = 'block';
     return;
   }
 
