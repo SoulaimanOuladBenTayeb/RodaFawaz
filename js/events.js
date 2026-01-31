@@ -44,12 +44,11 @@ async function loadEvents() {
   }
 }
 
-// Newsletter avec erreur en paragraphe rouge
+// Newsletter avec erreur en paragraphe rouge (EN DEHORS du form)
 const form = document.getElementById('newsletter-form');
 const thanks = document.getElementById('thanks');
-const emailInput = form.querySelector('input[type="email"]');
 
-// Créer élément erreur
+// Créer élément erreur EN DEHORS du form (comme thanks)
 const errorMessage = document.createElement('p');
 errorMessage.id = 'email-error';
 errorMessage.style.cssText = `
@@ -57,13 +56,14 @@ errorMessage.style.cssText = `
   color: #d00;
   font-size: 0.9em;
   margin-top: 0.5rem;
+  text-align: center;
 `;
-form.appendChild(errorMessage);
+form.parentNode.insertBefore(errorMessage, form.nextSibling);
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const emailValue = emailInput.value.trim();
+  const emailValue = form.querySelector('input[type="email"]').value.trim();
 
   // Cache erreur précédente
   errorMessage.style.display = 'none';
@@ -87,6 +87,7 @@ form.addEventListener('submit', async (e) => {
     );
 
     form.style.display = "none";
+    errorMessage.style.display = "none";
     thanks.style.display = "block";
 
   } catch (err) {
