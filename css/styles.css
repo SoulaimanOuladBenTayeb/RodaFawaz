@@ -230,5 +230,15 @@ footer {
   color: var(--primary-color);
 }
 
+@media (min-width: 768px) {
+  .event-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}
+
+
 
 
