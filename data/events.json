@@ -2,14 +2,14 @@
   {
     "city": "Paris",
     "description": "Gibran Gibran, Institut du monde arabe",
-    "date": "14 mars 2026",
+    "date": "le 14 mars 2026",
     "link": "https://theatre-martyrs.be/spectacles/25-26-la-mouette/",
     "linkType": "info"
   },
   {
     "city": "Bruxelles",
     "description": "La Mouette, Théâtre des Martyrs",
-    "date": "2 au 11 avril 2026",
+    "date": "du 2 au 11 avril 2026",
     "link": "https://theatre-martyrs.be/spectacles/25-26-la-mouette/",
     "linkType": "reservation"
   },
@@ -21,6 +21,7 @@
     "linkType": "reservation"
   }
 ]
+
 
 
 
