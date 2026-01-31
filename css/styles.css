@@ -230,13 +230,18 @@ footer {
   color: var(--primary-color);
 }
 
+.event-title {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
 @media only screen and (max-width: 600px) {
   .event-title {
-    display: flex;
     flex-direction: column;
-    gap: 1rem;
   }
 }
+
 
 
 
