@@ -56,7 +56,6 @@ errorMessage.style.cssText = `
   color: #d00;
   font-size: 0.9em;
   margin-top: 0.5rem;
-  text-align: center;
 `;
 form.parentNode.insertBefore(errorMessage, form.nextSibling);
 
@@ -69,7 +68,7 @@ form.addEventListener('submit', async (e) => {
   errorMessage.style.display = 'none';
 
   if (!isValidEmail(emailValue)) {
-    errorMessage.textContent = "Adresse invalide. Format : nom@domaine.com ou nom@domaine.be";
+    errorMessage.textContent = "Adresse invalide";
     errorMessage.style.display = 'block';
     return;
   }
@@ -99,3 +98,4 @@ form.addEventListener('submit', async (e) => {
 // Refresh 30s + au load
 setInterval(loadEvents, 30000);
 loadEvents();
+
