@@ -304,51 +304,6 @@ footer {
   }
 }
 
-/******/
-
-/* Bloc événement */
-.event {
-  margin-bottom: 2rem;
-}
-
-/* Par défaut (mobile) : 2 lignes comme tu veux */
-.event-title {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.event-line {
-  display: block;
-}
-
-/* Lien "Informations" / "Réservations" */
-.event-link {
-  display: inline-block;
-  margin-top: 0.25rem;
-  text-decoration: underline;
-}
-
-/* Desktop : tout sur une seule ligne */
-@media (min-width: 768px) {
-  .event-title {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.25rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .event-line-1::after {
-    content: " — ";
-    white-space: pre;
-  }
-
-  .event-line-2 {
-    /* On enlève le retour à la ligne forcé */
-  }
-}
-
 
 
 
