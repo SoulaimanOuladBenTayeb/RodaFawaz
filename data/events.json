@@ -1,7 +1,7 @@
 [
   {
     "city": "Paris",
-    "description": "Gibran Gibran, Institut du monde arabe jetest",
+    "description": "Gibran Gibran, Institut du monde arabe",
     "date": "le 14 mars 2026",
     "link": "https://theatre-martyrs.be/spectacles/25-26-la-mouette/",
     "linkType": "info"
@@ -11,14 +11,14 @@
     "description": "La Mouette, Théâtre des Martyrs",
     "date": "du 2 au 11 avril 2026",
     "link": "https://theatre-martyrs.be/spectacles/25-26-la-mouette/",
-    "linkType": "reservation"
+    "linkType": "info"
   },
   {
     "city": "Louvain-la-Neuve",
     "description": "La Mouette, Le Vilar",
     "date": "du 15 au 24 avril 2026",
     "link": "https://levilar.be/la-saison/mouette/",
-    "linkType": "reservation"
+    "linkType": "info"
   }
 ]
 

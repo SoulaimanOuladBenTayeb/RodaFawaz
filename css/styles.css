@@ -304,16 +304,16 @@ footer {
   }
 }
 
-/******/
+/*****/
 
-/* Événements responsive - NOUVEAU */
+/* Événements responsive */
 .event {
   margin-bottom: 2rem;
 }
 
 .event-title {
   display: flex;
-  flex-direction: column;  /* MOBILE : 2 lignes */
+  flex-direction: column;
   gap: 0.25rem;
   margin-bottom: 0.5rem;
 }
@@ -327,14 +327,21 @@ footer {
   margin-top: 0.25rem;
 }
 
-/* DESKTOP : 1 seule ligne */
+/* DESKTOP : 1 ligne + virgule COLLÉE */
 @media (min-width: 768px) {
   .event-title {
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 0.5rem;
+    gap: 0.25rem;
+  }
+  
+  .event-line-1::after {
+    content: ",";
+    margin-left: -0.125rem;  /* Tire la virgule à GAUCHE */
+    margin-right: 0.125rem;  /* Espace après pour "Institut" */
   }
 }
+
 
 
 
