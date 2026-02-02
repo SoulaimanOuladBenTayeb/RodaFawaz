@@ -17,20 +17,29 @@ async function loadEvents() {
 
       if (event.link && event.linkType !== 'none') {
         const label = event.linkType === 'info'
-          ? 'Plus d\'informations'
+          ? 'Informations'
           : 'Réservations';
-        buttonHtml = `<a href="${event.link}" target="_blank" rel="noopener">${label}</a>`;
+        buttonHtml = `<a class="event-link" href="${event.link}" target="_blank" rel="noopener">${label}</a>`;
+      }
+
+      // Séparer play (pièce) et venue (lieu)
+      let play = event.description || '';
+      let venue = '';
+
+      if (event.description && event.description.includes(',')) {
+        const parts = event.description.split(',').map(p => p.trim());
+        play = parts[0];                    // "La Mouette"
+        venue = parts.slice(1).join(', ');  // "Théâtre des Martyrs"
       }
 
       return `
         <section class="event">
           <p class="event-title">
-            <span class="event-main">
-              ${event.city || (event.title ? event.title.split('—')[0].trim() : 'Événement')}
-              ${event.description ? ` — ${event.description}` : ''}
+            <span class="event-line event-line-1">
+              ${event.city} — ${play}
             </span>
-            <span class="event-date">
-              ${event.date || (event.title ? event.title.split('—').pop().trim() : '')}
+            <span class="event-line event-line-2">
+              ${venue} — ${event.date}
             </span>
           </p>
           ${buttonHtml}
@@ -56,6 +65,7 @@ errorMessage.style.cssText = `
   color: #d00;
   font-size: 0.9em;
   margin-top: 0.5rem;
+  text-align: center;
 `;
 form.parentNode.insertBefore(errorMessage, form.nextSibling);
 
@@ -68,7 +78,7 @@ form.addEventListener('submit', async (e) => {
   errorMessage.style.display = 'none';
 
   if (!isValidEmail(emailValue)) {
-    errorMessage.textContent = "Adresse invalide";
+    errorMessage.textContent = "Adresse invalide. Format : nom@domaine.com ou nom@domaine.be";
     errorMessage.style.display = 'block';
     return;
   }
@@ -98,4 +108,3 @@ form.addEventListener('submit', async (e) => {
 // Refresh 30s + au load
 setInterval(loadEvents, 30000);
 loadEvents();
-
