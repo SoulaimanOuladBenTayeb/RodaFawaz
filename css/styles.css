@@ -304,6 +304,38 @@ footer {
   }
 }
 
+/******/
+
+/* Événements responsive - NOUVEAU */
+.event {
+  margin-bottom: 2rem;
+}
+
+.event-title {
+  display: flex;
+  flex-direction: column;  /* MOBILE : 2 lignes */
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.event-line {
+  display: block;
+}
+
+.event-link {
+  display: inline-block;
+  margin-top: 0.25rem;
+}
+
+/* DESKTOP : 1 seule ligne */
+@media (min-width: 768px) {
+  .event-title {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+}
+
 
 
 
