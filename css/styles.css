@@ -307,9 +307,10 @@ footer {
 /*****/
 
 /* Événements responsive */
+/*
 .event {
   margin-bottom: 2rem;
-}
+}*/
 
 .event-title {
   display: flex;
@@ -341,6 +342,7 @@ footer {
     margin-right: 0.125rem;  /* Espace après pour "Institut" */
   }
 }
+
 
 
 
