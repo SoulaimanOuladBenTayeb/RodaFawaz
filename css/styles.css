@@ -267,8 +267,8 @@ footer {
     position: relative;
     flex-direction: column;
     padding: 9% 8% 5% 8%;
-    margin-top: 3rem;
-    gap: 3rem;
+    margin-top: 5rem;
+    gap: 6rem;
   }
 
   aside form {
@@ -342,6 +342,7 @@ footer {
     margin-right: 0.125rem;  /* Espace après pour "Institut" */
   }
 }
+
 
 
 
