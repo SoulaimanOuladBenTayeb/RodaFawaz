@@ -267,8 +267,7 @@ footer {
     position: relative;
     flex-direction: column;
     padding: 9% 8% 5% 8%;
-    margin-top: 5rem;
-    gap: 6rem;
+    margin-top: 4rem;
   }
 
   aside form {
@@ -297,6 +296,10 @@ footer {
     border-radius: 100px;
     background-color: rgba(204, 200, 199, 0.473);
     padding: 2% 2% 2% 2%;
+  }
+
+  aside a {
+    margin-top: 15%;
   }
 
   footer {
@@ -342,6 +345,7 @@ footer {
     margin-right: 0.125rem;  /* Espace après pour "Institut" */
   }
 }
+
 
 
 
