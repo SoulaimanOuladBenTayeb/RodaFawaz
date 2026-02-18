@@ -32,6 +32,10 @@
   width: 100%;
 } */
 
+/* body {
+  width: 100%; je test vite fait
+} */
+
 * {
   margin: 0;
   padding: 0;
@@ -345,6 +349,7 @@ footer {
     margin-right: 0.125rem;  /* Espace après pour "Institut" */
   }
 }
+
 
 
 
