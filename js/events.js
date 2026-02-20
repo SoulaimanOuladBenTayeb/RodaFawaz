@@ -9,7 +9,7 @@ async function loadEvents() {
   
   try {
     const timestamp = new Date().getTime();
-    const response = await fetch(`./data/events.json?t=${timestamp}`);
+    const response = await fetch(`/data/events.json?t=${timestamp}`);
     const events = await response.json();
     
     const html = events.map(event => {
@@ -108,3 +108,4 @@ form.addEventListener('submit', async (e) => {
 // Refresh 30s + au load
 setInterval(loadEvents, 30000);
 loadEvents();
+
