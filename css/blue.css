@@ -1,0 +1,376 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap'); */
+
+@font-face {
+  font-family: "HelveticaRegular";
+  src: url("../fonts/HelveticaNeueRoman.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "MinionProItalic";
+  src: url("../fonts/Minion\ Pro\ Italic\ Subhead.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "MinionProRegular";
+  src: url("../fonts/MinionPro-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "ARIAL";
+  src: url("../fonts/ARIAL.TTF") format("opentype");
+}
+
+:root {
+  --primary-color: #1b263b;
+  --button-color: #69dbd2;
+  --hover-button-color: #42b1a7;
+  --primary-font: "HelveticaRegular";
+  --Second-font: "MinionProItalic";
+  --Third-font: "MinionProRegular";
+  --normal-fontSize: 1.5rem;
+  --phone-fontSize: 1.2rem;
+}
+
+/* body {
+  width: 100%;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.backendMessage {
+  font-family: var(--Second-font);
+  font-size: var(--normal-fontSize);
+}
+
+header {
+  padding: 6.5% 0% 2% 8%;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-family: var(--primary-font);
+}
+
+header span.NameR {
+  font-family: "ARIAL";
+}
+
+header p {
+  font-size: var(--normal-fontSize);
+  font-family: var(--primary-font);
+}
+
+header article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+main {
+  padding: 7% 0% 0% 8%;
+  display: flex;
+  flex-direction: column;
+}
+
+main section {
+  position: relative;
+  padding: 3% 0%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  font-family: var(--Second-font);
+  font-size: var(--normal-fontSize);
+}
+
+main section::before {
+  content: "";
+  background-color: var(--primary-color);
+  height: 1px;
+  width: 150px;
+  position: absolute;
+  top: 0;
+}
+
+main section:last-child::after {
+  content: "";
+  background-color: var(--primary-color);
+  height: 1px;
+  width: 150px;
+  position: absolute;
+  bottom: 0;
+}
+
+main section a {
+  position: relative;
+  width: fit-content;
+}
+
+/* main section a::after {
+  content: "";
+  height: 1px;
+  width: 0%;
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: ease 0.2s;
+}
+
+main section a:hover::after {
+  width: 100%;
+} */
+
+aside {
+  padding: 9% 0% 5% 8%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-family: var(--primary-font);
+  font-weight: 400;
+  font-size: var(--normal-fontSize);
+}
+
+aside h2 {
+  font-weight: 400;
+  font-size: var(--normal-fontSize);
+}
+
+aside a {
+  margin-top: 7%;
+}
+
+aside form {
+  display: flex;
+  border-collapse: collapse;
+}
+
+aside form input {
+  text-align: center;
+  font-family: var(--Third-font);
+  color: var(--primary-color);
+  font-size: var(--normal-fontSize);
+}
+
+aside input[type=email] {
+  border: none;
+  border: solid 1px var(--primary-color);
+  padding: 1%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+aside input[type=email]::placeholder {
+  color: var(--primary-color);
+}
+
+aside button {
+  border: none;
+  border: solid 1px var(--primary-color);
+  padding: 1%;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-left: none;
+  cursor: pointer;
+  background-color: var(--button-color);
+  padding: 0% 2% 0% 2%;
+  transition: ease 0.3s;
+  text-align: center;
+  font-family: var(--Third-font);
+  color: var(--primary-color);
+  font-size: var(--normal-fontSize);
+}
+
+aside button:hover {
+  background-color: var(--hover-button-color);
+}
+
+aside > a {
+  position: relative;
+  width: fit-content;
+  background-color: var(--button-color);
+  border: solid 1px black;
+  padding: 10px 20px;
+  border-radius: 100px;
+  transition: ease 0.3s;
+}
+
+aside > a:hover {
+  background-color: var(--hover-button-color);
+}
+
+footer {
+  text-align: center;
+  padding: 5% 0% 10% 0%;
+  font-family: var(--primary-font);
+  font-size: var(--normal-fontSize);
+  color: var(--primary-color);
+}
+
+.event-title {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .backendMessage {
+    font-size: var(--phone-fontSize);
+  }
+
+  .event-title {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  header {
+    padding: 23% 0% 2% 8%;
+    gap: 4rem;
+  }
+
+  header p {
+    font-size: var(--phone-fontSize);
+  }
+
+  main {
+    padding: 7% 8% 0% 8%;
+    margin-top: 15%;
+  }
+
+  main section {
+    font-size: 1.3rem;
+    padding: 10% 0%;
+    font-size: var(--phone-fontSize);
+  }
+
+  aside {
+    position: relative;
+    flex-direction: column;
+    padding: 9% 8% 5% 8%;
+    margin-top: 4rem;
+    font-size: var(--phone-fontSize);
+  }
+
+  aside h2 {
+    font-size: var(--phone-fontSize);
+  }
+
+  aside form {
+    width: 100%;
+    flex-direction: column;
+    border-collapse: inherit;
+    gap: 1.2rem;
+  }
+
+  aside form input {
+    display: block;
+    text-align: left;
+    font-size: var(--phone-fontSize);
+  }
+
+  aside input[type=email] {
+    border: none;
+    border: solid 1px var(--primary-color);
+    padding: 2%;
+    padding-left: 6%;
+    border-radius: 10px;
+  }
+
+  aside button {
+    border: none;
+    border: solid 1px var(--primary-color);
+    border-radius: 100px;
+    background-color: var(--button-color);
+    padding: 2% 2% 2% 2%;
+    font-size: var(--phone-fontSize);
+  }
+
+  aside a {
+    margin-top: 25%;
+  }
+
+  footer {
+    margin-top: 25%;
+    font-size: var(--phone-fontSize);
+  }
+}
+
+/*****/
+
+/* Événements responsive */
+/*
+.event {
+  margin-bottom: 2rem;
+}*/
+
+.event-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.event-line {
+  display: block;
+}
+
+.event-link {
+  display: inline-block;
+  margin-top: 0.25rem;
+  background-color: var(--button-color);
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: solid 1px black;
+  transition: ease 0.3s;
+}
+
+.event-link:hover {
+  background-color: var(--hover-button-color);
+  /* scale: 1.02; */
+}
+
+/* DESKTOP : 1 ligne + virgule COLLÉE */
+@media (min-width: 768px) {
+  .event-title {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.25rem;
+  }
+  
+  .event-line-1::after {
+    content: ",";
+    margin-left: -0.125rem;  /* Tire la virgule à GAUCHE */
+    margin-right: 0.125rem;  /* Espace après pour "Institut" */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
