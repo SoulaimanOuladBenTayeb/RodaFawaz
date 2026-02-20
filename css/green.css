@@ -58,6 +58,7 @@ header {
 header h1 {
   font-size: 2rem;
   font-family: var(--primary-font);
+  font-family: "ARIAL";
 }
 
 header span.NameR {
