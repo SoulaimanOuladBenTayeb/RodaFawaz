@@ -9,7 +9,7 @@ async function loadEvents() {
   
   try {
     const timestamp = new Date().getTime();
-    const response = await fetch(`./data/events.json?t=${timestamp}`);
+    const response = await fetch(`/data/events.json?t=${timestamp}`);
     const events = await response.json();
     
     const html = events.map(event => {
@@ -65,7 +65,7 @@ errorMessage.style.cssText = `
   color: #d00;
   font-size: 0.9em;
   margin-top: 0.5rem;
-  text-align: center;
+  text-align: left;
 `;
 form.parentNode.insertBefore(errorMessage, form.nextSibling);
 
