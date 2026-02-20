@@ -108,3 +108,4 @@ form.addEventListener('submit', async (e) => {
 // Refresh 30s + au load
 setInterval(loadEvents, 30000);
 loadEvents();
+
