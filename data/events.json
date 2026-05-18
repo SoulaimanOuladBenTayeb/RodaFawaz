@@ -1,23 +1,16 @@
 [
   {
-    "city": "Paris",
+    "city": "Bruxelles",
     "description": "Gibran Gibran, Institut du monde arabe",
-    "date": "14 mars 2026",
+    "date": "13 juin 2026",
     "link": "https://www.imarabe.org/fr/agenda/litterature-et-poesie/gibran-gibran",
     "linkType": "info"
   },
   {
     "city": "Bruxelles",
-    "description": "La Mouette, Théâtre des Martyrs",
-    "date": "2-11 avril 2026",
-    "link": "https://theatre-martyrs.be/spectacles/25-26-la-mouette/",
-    "linkType": "info"
-  },
-  {
-    "city": "Louvain-la-Neuve",
-    "description": "La Mouette, Le Vilar",
-    "date": "15-24 avril 2026",
-    "link": "https://levilar.be/la-saison/mouette/",
+    "description": "Plateau stand up des Guerrières de la paix, La Tricoterie",
+    "date": "19 juin 2026",
+    "link": "https://www.tricoterie.be/fr/agenda/l-agenda-culturel/plateau-stand-up-des-guerrieres-de-la-paix-belgique?id_evenement=7441&lang=fr",
     "linkType": "info"
   }
 ]
