@@ -22,6 +22,12 @@ async function loadEvents() {
         buttonHtml = `<a class="event-link" href="${event.link}" target="_blank" rel="noopener">${label}</a>`;
       }
 
+      // Texte d’inscription (optionnel)
+      let inscriptionHtml = '';
+      if (event.inscription) {
+        inscriptionHtml = `<p class="event-inscription">${event.inscription}</p>`;
+      }
+
       // Séparer play (pièce) et venue (lieu)
       let play = event.description || '';
       let venue = '';
@@ -43,6 +49,7 @@ async function loadEvents() {
             </span>
           </p>
           ${buttonHtml}
+          ${inscriptionHtml}
         </section>
       `;
     }).join('') || '<p class="backendMessage">Aucun événement.</p>';
@@ -78,7 +85,7 @@ form.addEventListener('submit', async (e) => {
   errorMessage.style.display = 'none';
 
   if (!isValidEmail(emailValue)) {
-    errorMessage.textContent = "Adresse invalide. Format : nom@domaine.com ou nom@domaine.be";
+    errorMessage.textContent = "Adresse invalide. Format : [nom@domaine.com](mailto:nom@domaine.com) ou nom@domaine.be";
     errorMessage.style.display = 'block';
     return;
   }
@@ -108,4 +115,3 @@ form.addEventListener('submit', async (e) => {
 // Refresh 30s + au load
 setInterval(loadEvents, 30000);
 loadEvents();
-
