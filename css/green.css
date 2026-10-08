@@ -217,19 +217,18 @@ footer {
 }
 
 .event-title {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.event-line-1,
-.event-line-2 {
-  flex: 0 0 auto;        
+.event-top {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
 }
 
 .event-line-3 {
-  flex-basis: 100%;
   display: block;
   font-size: 0.85em;
   color: #555;
