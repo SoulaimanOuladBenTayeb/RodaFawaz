@@ -218,6 +218,7 @@ footer {
 
 /* ----------------- EVENTS ----------------- */
 
+/* Téléphone et tablette par défaut */
 .event-title {
   display: flex;
   flex-direction: column;
@@ -233,10 +234,12 @@ footer {
 
 .event-line {
   display: block;
+  width: 100%;
 }
 
 .event-line-3 {
   display: block;
+  width: 100%;
   font-size: 0.85em;
   color: #555;
   margin-top: 0.25rem;
@@ -256,12 +259,12 @@ footer {
   background-color: var(--hover-button-color);
 }
 
-/* Desktop */
-@media (min-width: 600px) {
+/* Desktop uniquement : à partir de 1024px */
+@media (min-width: 1024px) {
   .event-top {
     flex-direction: row;
     align-items: baseline;
-    /*gap: 1.5rem;*/
+    gap: 1.5rem;
   }
 
   .event-line-1,
@@ -276,24 +279,9 @@ footer {
   }
 }
 
-/* Mobile */
-@media only screen and (max-width: 599px) {
-  .event-top {
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .event-line-1,
-  .event-line-2,
-  .event-line-3 {
-    width: 100%;
-  }
-}
-
 /* ----------------- MEDIA QUERIES GÉNÉRALES ----------------- */
 
 @media only screen and (max-width: 600px) {
-
   .backendMessage {
     font-size: var(--phone-fontSize);
   }
@@ -317,9 +305,8 @@ footer {
   }
 
   main section {
-    font-size: 1.3rem;
-    padding: 10% 0%;
     font-size: var(--phone-fontSize);
+    padding: 10% 0%;
   }
 
   aside {
