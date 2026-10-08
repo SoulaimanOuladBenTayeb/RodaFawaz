@@ -223,7 +223,7 @@ footer {
 }
 
 .event-top {
-  display: flex;
+  display: block;
   flex-direction: row;
   gap: 1.5rem;
 }
@@ -368,6 +368,10 @@ footer {
     content: ",";
     margin-left: -0.125rem;  /* Tire la virgule à GAUCHE */
     margin-right: 0.125rem;  /* Espace après pour "Institut" */
+  }
+
+  .event-top {
+    display: flex;
   }
 }
 
