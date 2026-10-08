@@ -218,7 +218,6 @@ footer {
 
 /* ----------------- EVENTS ----------------- */
 
-/* Mobile par défaut : les 3 lignes l'une sous l'autre */
 .event-title {
   display: flex;
   flex-direction: column;
@@ -228,18 +227,16 @@ footer {
 
 .event-top {
   display: flex;
-  flex-direction: column; /* ligne 1 au-dessus de ligne 2 */
+  flex-direction: column;
   gap: 0.25rem;
 }
 
 .event-line {
   display: block;
-  width: 100%;
 }
 
 .event-line-3 {
   display: block;
-  width: 100%;
   font-size: 0.85em;
   color: #555;
   margin-top: 0.25rem;
@@ -259,29 +256,37 @@ footer {
   background-color: var(--hover-button-color);
 }
 
-/* Desktop : dès 600px, ligne 1 et 2 côte à côte, ligne 3 en dessous */
+/* Desktop */
 @media (min-width: 600px) {
   .event-top {
-    flex-direction: row !important; /* force ligne 1 et 2 horizontales */
+    flex-direction: row;
+    align-items: baseline;
     gap: 1.5rem;
   }
 
   .event-line-1,
   .event-line-2 {
-    display: block;
+    width: auto;
   }
 
-  .event-line-3 {
-    display: block;
-    width: 100%;
-    margin-top: 0.25rem;
-  }
-
-  /* Virgule entre ligne 1 et 2 sur desktop */
   .event-line-1::after {
     content: ",";
     margin-left: -0.125rem;
     margin-right: 0.125rem;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 599px) {
+  .event-top {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .event-line-1,
+  .event-line-2,
+  .event-line-3 {
+    width: 100%;
   }
 }
 
