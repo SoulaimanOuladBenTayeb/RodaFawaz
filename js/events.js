@@ -25,7 +25,11 @@ async function loadEvents() {
       // Texte d’inscription (optionnel)
       let inscriptionHtml = '';
       if (event.inscription) {
-        inscriptionHtml = `<p class="event-inscription">${event.inscription}</p>`;
+        inscriptionHtml = `
+          <span class="event-line event-line-3">
+            ${event.inscription}
+          </span>
+        `;
       }
 
       // Séparer play (pièce) et venue (lieu)
@@ -47,9 +51,9 @@ async function loadEvents() {
             <span class="event-line event-line-2">
               ${venue} — ${event.date}
             </span>
+            ${inscriptionHtml}
           </p>
           ${buttonHtml}
-          ${inscriptionHtml}
         </section>
       `;
     }).join('') || '<p class="backendMessage">Aucun événement.</p>';
