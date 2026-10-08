@@ -80,4 +80,49 @@ const errorMessage = document.createElement('p');
 errorMessage.id = 'email-error';
 errorMessage.style.cssText = `
   display: none;
-  color:
+  color: #d00;
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+  text-align: left;
+`;
+form.parentNode.insertBefore(errorMessage, form.nextSibling);
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const emailValue = form.querySelector('input[type="email"]').value.trim();
+
+  // Cache erreur précédente
+  errorMessage.style.display = 'none';
+
+  if (!isValidEmail(emailValue)) {
+    errorMessage.textContent = "Adresse invalide. Format : [nom@domaine.com](mailto:nom@domaine.com) ou nom@domaine.be";
+    errorMessage.style.display = 'block';
+    return;
+  }
+
+  const formData = new FormData(form);
+
+  try {
+    await fetch(
+      "https://docs.google.com/forms/d/e/1FAIpQLSf57GcJQX4fe4zMy6xpsNNr0Vy3jGSGgBP0XwT0Cq9pnJcXzg/formResponse",
+      {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+      }
+    );
+
+    form.style.display = "none";
+    errorMessage.style.display = "none";
+    thanks.style.display = "block";
+
+  } catch (err) {
+    console.error(err);
+    alert("Erreur, réessaie plus tard.");
+  }
+});
+
+// Refresh 30s + au load
+setInterval(loadEvents, 30000);
+loadEvents();
