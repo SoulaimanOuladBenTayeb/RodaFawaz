@@ -216,16 +216,24 @@ footer {
   color: var(--primary-color);
 }
 
+/* ----------------- EVENTS ----------------- */
+
+/* Base (mobile par défaut) */
 .event-title {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .event-top {
+  display: flex;
+  flex-direction: column; /* mobile : empile ligne 1 et 2 */
+  gap: 0.25rem;
+}
+
+.event-line {
   display: block;
-  flex-direction: row;
-  gap: 1.5rem;
 }
 
 .event-line-3 {
@@ -235,15 +243,41 @@ footer {
   margin-top: 0.25rem;
 }
 
+.event-link {
+  display: inline-block;
+  margin-top: 0.25rem;
+  background-color: var(--button-color);
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: solid 1px black;
+  transition: ease 0.3s;
+}
+
+.event-link:hover {
+  background-color: var(--hover-button-color);
+}
+
+/* Desktop : ligne 1 et 2 côte à côte, ligne 3 en dessous */
+@media (min-width: 768px) {
+  .event-top {
+    flex-direction: row;   /* ligne 1 et 2 horizontales */
+    gap: 1.5rem;
+  }
+
+  /* Virgule entre ligne 1 et 2 sur desktop */
+  .event-line-1::after {
+    content: ",";
+    margin-left: -0.125rem;
+    margin-right: 0.125rem;
+  }
+}
+
+/* ----------------- MEDIA QUERIES GÉNÉRALES ----------------- */
+
 @media only screen and (max-width: 600px) {
 
   .backendMessage {
     font-size: var(--phone-fontSize);
-  }
-
-  .event-title {
-    flex-direction: column;
-    gap: 1rem;
   }
 
   header {
@@ -321,78 +355,3 @@ footer {
     font-size: var(--phone-fontSize);
   }
 }
-
-/*****/
-
-/* Événements responsive */
-/*
-.event {
-  margin-bottom: 2rem;
-}*/
-
-.event-title {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.event-line {
-  display: block;
-}
-
-.event-link {
-  display: inline-block;
-  margin-top: 0.25rem;
-  background-color: var(--button-color);
-  padding: 10px 20px;
-  border-radius: 100px;
-  border: solid 1px black;
-  transition: ease 0.3s;
-}
-
-.event-link:hover {
-  background-color: var(--hover-button-color);
-  /* scale: 1.02; */
-}
-
-/* DESKTOP : 1 ligne + virgule COLLÉE */
-@media (min-width: 768px) {
-  .event-title {/*
-    flex-direction: row;*/
-    flex-wrap: nowrap;
-    gap: 0.25rem;
-  }
-  
-  .event-line-1::after {
-    content: ",";
-    margin-left: -0.125rem;  /* Tire la virgule à GAUCHE */
-    margin-right: 0.125rem;  /* Espace après pour "Institut" */
-  }
-
-  .event-top {
-    display: flex;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
