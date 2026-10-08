@@ -230,6 +230,7 @@ footer {
   display: flex;
   flex-direction: column; /* ligne 1 au-dessus de ligne 2 */
   gap: 0.25rem;
+  background-color: red;
 }
 
 .event-line {
