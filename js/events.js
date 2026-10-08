@@ -45,11 +45,13 @@ async function loadEvents() {
       return `
         <section class="event">
           <p class="event-title">
-            <span class="event-line event-line-1">
-              ${event.city} — ${play}
-            </span>
-            <span class="event-line event-line-2">
-              ${venue} — ${event.date}
+            <span class="event-top">
+              <span class="event-line event-line-1">
+                ${event.city} — ${play}
+              </span>
+              <span class="event-line event-line-2">
+                ${venue} — ${event.date}
+              </span>
             </span>
             ${inscriptionHtml}
           </p>
