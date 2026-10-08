@@ -222,6 +222,13 @@ footer {
     gap: 1.5rem;
 }
 
+.event-line-3 {
+  display: block;
+  font-size: 0.85em;
+  color: #555;
+  margin-top: 0.25rem;
+}
+
 @media only screen and (max-width: 600px) {
 
   .backendMessage {
