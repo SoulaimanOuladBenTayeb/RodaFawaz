@@ -358,8 +358,8 @@ footer {
 
 /* DESKTOP : 1 ligne + virgule COLLÉE */
 @media (min-width: 768px) {
-  .event-title {
-    flex-direction: row;
+  .event-title {/*
+    flex-direction: row;*/
     flex-wrap: nowrap;
     gap: 0.25rem;
   }
