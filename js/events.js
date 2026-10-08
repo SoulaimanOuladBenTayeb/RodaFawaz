@@ -32,27 +32,30 @@ async function loadEvents() {
         `;
       }
 
-      // Séparer play (pièce) et venue (lieu)
-      let play = event.description || '';
+      // Séparer play (pièce) et venue (lieu), seulement si description existe
+      let play = '';
       let venue = '';
 
-      if (event.description && event.description.includes(',')) {
-        const parts = event.description.split(',').map(p => p.trim());
-        play = parts[0];                    // "La Mouette"
-        venue = parts.slice(1).join(', ');  // "Théâtre des Martyrs"
+      if (event.description && typeof event.description === 'string') {
+        if (event.description.includes(',')) {
+          const parts = event.description.split(',').map(p => p.trim());
+          play = parts[0] || '';
+          venue = parts.slice(1).join(', ') || '';
+        } else {
+          play = event.description;
+          venue = '';
+        }
       }
+
+      // Construire les deux premières lignes uniquement si city / date existent
+      const line1 = (event.city || '') || play ? `${event.city || ''}${event.city && play ? ' — ' : ''}${play}` : '';
+      const line2 = [venue, event.date].filter(Boolean).join(' — ');
 
       return `
         <section class="event">
           <p class="event-title">
-            <span class="event-top">
-              <span class="event-line event-line-1">
-                ${event.city} — ${play}
-              </span>
-              <span class="event-line event-line-2">
-                ${venue} — ${event.date}
-              </span>
-            </span>
+            ${line1 ? `<span class="event-line event-line-1">${line1}</span>` : ''}
+            ${line2 ? `<span class="event-line event-line-2">${line2}</span>` : ''}
             ${inscriptionHtml}
           </p>
           ${buttonHtml}
