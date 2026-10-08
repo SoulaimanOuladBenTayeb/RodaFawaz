@@ -265,6 +265,7 @@ footer {
   .event-top {
     flex-direction: row !important; /* force ligne 1 et 2 horizontales */
     gap: 1.5rem;
+    background-color: blue;
   }
 
   .event-line-1,
