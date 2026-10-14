@@ -261,7 +261,6 @@ footer {
 
 .event-line-3 {
   white-space: pre-line;
-  width: 50%;
 }
 
 /* Desktop uniquement : à partir de 1024px */
@@ -281,6 +280,10 @@ footer {
     content: ",";
     margin-left: -0.125rem;
     margin-right: 0.125rem;
+  }
+
+  .event-line-3 {
+    width: 50%;
   }
 }
 
