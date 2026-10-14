@@ -261,6 +261,7 @@ footer {
 
 .event-line-3 {
   white-space: pre-line;
+  width: 50%;
 }
 
 /* Desktop uniquement : à partir de 1024px */
