@@ -259,6 +259,10 @@ footer {
   background-color: var(--hover-button-color);
 }
 
+.event-line-3 {
+  white-space: pre-line;
+}
+
 /* Desktop uniquement : à partir de 1024px */
 @media (min-width: 1024px) {
   .event-top {
